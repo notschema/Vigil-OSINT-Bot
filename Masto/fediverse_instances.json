@@ -1,0 +1,950 @@
+{
+    "Masto license" : ["MIT"],
+    "File Name": ["fediverse_instances.json"],
+    "Usage": ["scan user on all Mastodon (Fediverse) instances in order to get a more reliable result than the Mastodon API"],
+    "author" : ["C3n7ral051nt4g3ncy"],
+
+    
+    "sites" : [
+       {
+        "name" : "mastodon.social",
+        "uri_check" : "https://mastodon.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "profile:username",
+        "m_string" : "The page you are looking for isn't here.",
+        "m_code" : 404,
+        "known" : ["john", "alex"],
+        "valid" : true
+       },
+       {
+        "name" : "chaos.social",
+        "uri_check" : "https://chaos.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@chaos.social) - chaos.social</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["mike", "craig"],
+        "valid" : true
+       },
+       {
+        "name" : "mstdn_social",
+        "uri_check" : "https://mstdn.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "mstdn.social",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["stux", "MariNYC"],
+        "valid" : true
+       },
+       {
+        "name" : "meow.social",
+        "uri_check" : "https://meow.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "- the mastodon instances for creatures</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["meow", "novra"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.online",
+        "uri_check" : "https://mastodon.online/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.online) - Mastodon</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["Gargron", "RDHale"],
+        "valid" : true
+       },
+       {
+        "name" : "fosstodon",
+        "uri_check" : "https://fosstodon.org/@{account}",
+        "e_code" : 200,
+        "e_string" : "@fosstodon.org) - Fosstodon</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["fosstodon", "GreyLinux"],
+        "valid" : true
+       },
+       {
+        "name" : "baraag",
+        "uri_check" : "https://baraag.net/@{account}",
+        "e_code" : 200,
+        "e_string" : "@baraag.net) -",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["satori", "lithla"],
+        "valid" : true
+       },
+       {
+        "name" : "mstdn.jp",
+        "uri_check" : "https://mstdn.jp/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mstdn.jp) - mstdn.jp</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["mstdn_jp", "ilol7"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.cloud",
+        "uri_check" : "https://mastodon.cloud/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.cloud) - mastodon.cloud</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["TheAdmin", "Sujiyan"],
+        "valid" : true
+       },
+       {
+        "name" : "mas.to",
+        "uri_check" : "https://mas.to/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mas.to) - mas.to</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["trumpet", "inzaedy"],
+        "valid" : true
+       },
+       {
+        "name" : "pawoo",
+        "uri_check" : "https://pawoo.net/@{account}",
+        "e_code" : 200,
+        "e_string" : "@pawoo.net) - Pawoo</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["aruseiyu10", "Lipp"],
+        "valid" : true
+       },
+       {
+        "name" : "lgbt",
+        "uri_check" : "https://lgbt.io/@{account}",
+        "e_code" : 200,
+        "e_string" : "lgbt.io) - LGBT.io</title>",
+        "m_string" : "Mastodon Glitch Edition</title>",
+        "m_code" : 404,
+        "known" : ["self", "ppressedd"],
+        "valid" : true
+       },
+       {
+        "name" : "social.linuxpizza",
+        "uri_check" : "https://social.linux.pizza/@{account}",
+        "e_code" : 200,
+        "e_string" : "@social.linux.pizza) - Linux.Pizza</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["admin", "gnu_stallman"],
+        "valid" : true
+       },
+       {
+        "name" : "cmx.im",
+        "uri_check" : "https://m.cmx.im/@{account}",
+        "e_code" : 200,
+        "e_string" : "@m.cmx.im) - 长毛象中文站</title>",
+        "m_string" : "- Mastodon</title>",
+        "m_code" : 404,
+        "known" : ["strawberry", "lo"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.uno",
+        "uri_check" : "https://mastodon.uno/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.uno) - Mastodon Social Italia</title>",
+        "m_string" : "La pagina che stavi cercando non esiste.",
+        "m_code" : 404,
+        "known" : ["filippodb", "quinta"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.art",
+        "uri_check" : "https://mastodon.art/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.art) - Mastodon.ART</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["Curator", "adamk678"],
+        "valid" : true
+       },
+       {
+        "name" : "mamot",
+        "uri_check" : "https://mamot.fr/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mamot.fr) - La Quadrature du Net - Mastodon - Media Fédéré</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["LaQuadrature", "blast_info"],
+        "valid" : true
+       },
+       {
+        "name" : "infosec.exchange",
+        "uri_check" : "https://infosec.exchange/@{account}",
+        "e_code" : 200,
+        "e_string" : "@infosec.exchange) - Infosec Exchange</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["micahlahren", "yeswehack"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.world",
+        "uri_check" : "https://mastodon.world/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.world) - Mastodon</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["ruud", "fistwerk"],
+        "valid" : true
+       },
+       {
+        "name" : "troet.cafe",
+        "uri_check" : "https://troet.cafe/@{account}",
+        "e_code" : 200,
+        "e_string" : "@troet.cafe) - troet.cafe - Mastodon</title>",
+        "m_string" : "<title>Die Seite nach der du gesucht hast wurde nicht gefunden.",
+        "m_code" : 404,
+        "known" : ["martinmuc", "funnzl"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.scot",
+        "uri_check" : "https://mastodon.scot/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.scot) - mastodon.scot</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["trumpet", "AlanCumming"],
+        "valid" : true
+       },
+       {
+        "name" : "awscommunity.social",
+        "uri_check" : "https://awscommunity.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@awscommunity.social) - AWSCommunity.social</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["Ric", "jaredkschreiber"],
+        "valid" : true
+       },
+       {
+        "name" : "qoto",
+        "uri_check" : "https://qoto.org/@{account}",
+        "e_code" : 200,
+        "e_string" : "@qoto.org) - Qoto Mastodon</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["DoctorRinny", "cmclase"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.ie",
+        "uri_check" : "https://mastodon.ie/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.ie) - mastodon.ie</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["dregin", "Cianmaher0"],
+        "valid" : true
+       },
+       {
+        "name" : "masthead.social",
+        "uri_check" : "https://masthead.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@masthead.social) - Masthead</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["mdent123a", "zuriberry"],
+        "valid" : true
+       },
+       {
+        "name" : "social.tchncs",
+        "uri_check" : "https://social.tchncs.de/@{account}",
+        "e_code" : 200,
+        "e_string" : "@social.tchncs.de) - Mastodon</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["milan", "Brackmeister"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.green",
+        "uri_check" : "https://mastodon.green/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.green) - Mastodon.green</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["JohanEmpa", "Etain18"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.turkey",
+        "uri_check" : "https://mastodon.com.tr/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.com.tr) - mastodon.com.tr</title>",
+        "m_string" : "<title>Aradığınız sayfa bulunamad",
+        "m_code" : 404,
+        "known" : ["berkay", "zerqddt"],
+        "valid" : true
+       },
+       {
+        "name" : "fedibird",
+        "uri_check" : "https://fedibird.com/@{account}",
+        "e_code" : 200,
+        "e_string" : "@fedibird.com) - Fedibird</title>",
+        "m_string" : "<title>お探しのページは見つかりませんでした",
+        "m_code" : 404,
+        "known" : ["noellabo", "sukekyo"],
+        "valid" : true
+       },
+       {
+        "name" : "wxw.moe",
+        "uri_check" : "https://wxw.moe/@{account}",
+        "e_code" : 200,
+        "e_string" : "@wxw.moe) - 呜呜",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["Polestar", "distributionbox"],
+        "valid" : true
+       },
+       {
+        "name" : "ioc.exchange",
+        "uri_check" : "https://ioc.exchange/@{account}",
+        "e_code" : 200,
+        "e_string" : "@ioc.exchange) - IOC.exchange</title",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["seb", "CarpeDiemT3ch"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.gamedev",
+        "uri_check" : "https://mastodon.gamedev.place/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.gamedev.place) - Gamedev Mastodon</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["aras", "NeverCuteGames"],
+        "valid" : true
+       },
+       {
+        "name" : "det.social",
+        "uri_check" : "https://det.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@det.social) - det.social</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["stefan", "janstraube"],
+        "valid" : true
+       },
+       {
+        "name" : "noc.social",
+        "uri_check" : "https://noc.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@noc.social) - Noc.Social</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["dcid", "inushin"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodontech.de",
+        "uri_check" : "https://mastodontech.de/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodontech.de) - MastodonTech.de</title>",
+        "m_string" : "<title>Die Seite nach der du gesucht hast wurde nicht gefunden.",
+        "m_code" : 404,
+        "known" : ["markusblogde", "Matt_999"],
+        "valid" : true
+       },
+       {
+        "name" : "toot.wales",
+        "uri_check" : "https://toot.wales/@{account}",
+        "e_code" : 200,
+        "e_string" : "@toot.wales) - Tŵt Cymru | Toot Wales</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["jaz", "GeraldR"],
+        "valid" : true
+       },
+       {
+        "name" : "noagendasocial",
+        "uri_check" : "https://noagendasocial.com/@{account}",
+        "e_code" : 200,
+        "e_string" : "@noagendasocial.com) - No Agenda Social</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["adam", "Alphakilopapa"],
+        "valid" : true
+       },
+       {
+        "name" : "nrw.social",
+        "uri_check" : "https://nrw.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@nrw.social) - NRW.social</title>",
+        "m_string" : "Die Seite nach der du gesucht hast wurde nicht gefunden.",
+        "m_code" : 404,
+        "known" : ["dbeaver", "Lordoftzewords"],
+        "valid" : true
+       },
+       {
+        "name" : "climatejustice.social",
+        "uri_check" : "https://climatejustice.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@climatejustice.social) - Climate Justice Social</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["PaulaToThePeople", "CalNativeLandscape"],
+        "valid" : true
+       },
+       {
+        "name" : "norden.social",
+        "uri_check" : "https://norden.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@norden.social) - norden.social</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["leuchtturm", "chucker"],
+        "valid" : true
+       },
+       {
+        "name" : "counter.social",
+        "uri_check" : "https://counter.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "counter.social) - CounterSocial</title>",
+        "m_string" : "Private Profile</title>",
+        "m_code" : 404,
+        "known" : ["ericconrad", "webbreacher"],
+        "valid" : true
+       },
+       {
+        "name" : "EU_Voice",
+        "uri_check" : "https://social.network.europa.eu/@{account}",
+        "e_code" : 200,
+        "e_string" : "@social.network.europa.eu) - EU Voice</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["EDPS_supervisor", "admin"],
+        "valid" : true
+       },
+       {
+        "name" : "brighteon.social",
+        "uri_check" : "https://brighteon.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@brighteon.social) - BrighteonSocial</title>",
+        "m_string" : "<p>The page you&#39;re looking for cannot be found.",
+        "m_code" : 404,
+        "known" : ["guloguloguy", "RheaFlight"],
+        "valid" : true
+       },
+       {
+        "name" : "eupolicy.social",
+        "uri_check" : "https://eupolicy.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@eupolicy.social) - EUpolicy.social - A Mastodon server for the EU bubble",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["pauljbelcher", "adrechsel"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodonapp.uk",
+        "uri_check" : "https://mastodonapp.uk/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodonapp.uk) - Mastodon App UK</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["wild1145", "paulwarbo"],
+        "valid" : true
+       },
+       {
+        "name" : "swiss.social",
+        "uri_check" : "https://swiss.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@chm@swiss.social) - swiss.social</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["chm", "micha"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.top",
+        "uri_check" : "https://mastodon.top/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.top) - Mastodon.top</title",
+        "m_string" : "<title>La page que vous recherchez n’existe pas",
+        "m_code" : 404,
+        "known" : ["thomas_virtubox", "fresnay"],
+        "valid" : true
+       },
+       {
+        "name" : "glammr.us",
+        "uri_check" : "https://glammr.us/@{account}",
+        "e_code" : 200,
+        "e_string" : "@glammr.us) - glammr.us Mastodon</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["FashAshLilith", "joshuatj"],
+        "valid" : true
+       },
+       {
+        "name" : "Toot.cat",
+        "uri_check" : "https://toot.cat/@{account}",
+        "e_code" : 200,
+        "e_string" : "@toot.cat) - Toot.Cat</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["woozle", "StephanieZvan"],
+        "valid" : true
+       },
+       {
+        "name" : "0sint.social",
+        "uri_check" : "https://0sint.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@0sint.social) - 0sint.social</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["cyb_detective", "OpalKatz"],
+        "valid" : true
+       },
+       {
+        "name" : "socialbund.de",
+        "uri_check" : "https://social.bund.de/@{account}",
+        "e_code" : 200,
+        "e_string" : "@social.bund.de) - social.bund.de</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["bfdi", "bmdv"],
+        "valid" : true
+       },
+       {
+        "name" : "101010.pl",
+        "uri_check" : "https://101010.pl/@{account}",
+        "e_code" : 200,
+        "e_string" : "@101010.pl) - 101010.pl</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["xaphanpl", "nomadbynature"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.education",
+        "uri_check" : "https://mastodon.education/@{account}",
+        "e_code" : 200,
+        "e_string" : "mastodon.education) - Mastodon Education</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["redegelde", "imsabbah"],
+        "valid" : true
+       },
+       {
+        "name" : "social.rebellion",
+        "uri_check" : "https://social.rebellion.global/@{account}",
+        "e_code" : 200,
+        "e_string" : "@social.rebellion.global) - Mastodon</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["xrfrance", "xrgrenoble"],
+        "valid" : true
+       },
+       {
+        "name" : "hulvr",
+        "uri_check" : "https://hulvr.com/@{account}",
+        "e_code" : 200,
+        "e_string" : "@hulvr.com) - hulvr</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["hulver", "devtrash"],
+        "valid" : true
+       },
+       {
+        "name" : "vocalodon.net",
+        "uri_check" : "https://vocalodon.net/@{account}",
+        "e_code" : 200,
+        "e_string" : "@vocalodon.net) - Vocalodon</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["tomoki", "heatmetalx"],
+        "valid" : true
+       },
+       {
+        "name" : "heislandmine",
+        "uri_check" : "https://heislandmine.work/@{account}",
+        "e_code" : 200,
+        "e_string" : "@heislandmine.work) - landodon</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["Heislandmine", "kani_senbei"],
+        "valid" : true
+       },
+       {
+        "name" : "newsie",
+        "uri_check" : "https://newsie.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@newsie.social) - Newsie Social</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["jeff", "panamared27401"],
+        "valid" : true
+       },
+       {
+        "name" : "alivebar",
+        "uri_check" : "https://alive.bar/@{account}",
+        "e_code" : 200,
+        "e_string" : "@alive.bar) - alive.bar</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["admin", "insuaal"],
+        "valid" : true
+       },
+       {
+        "name" : "defcon",
+        "uri_check" : "https://defcon.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "- DEF CON Social</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["defcon", "buttersnatcher"],
+        "valid" : true
+       },
+       {
+        "name" : "sueden",
+        "uri_check" : "https://sueden.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "sueden.social",
+        "m_string" : "Die Seite",
+        "m_code" : 404,
+        "known" : ["ogopogo", "jona"],
+        "valid" : true
+       },
+       {
+        "name" : "hackerstown",
+        "uri_check" : "https://hackers.town/@{account}",
+        "e_code" : 200,
+        "e_string" : "town</title>",
+        "m_string" : "The page you are looking for isn&#39;t",
+        "m_code" : 404,
+        "known" : ["thegibson", "remotenemesis"],
+        "valid" : true
+       },
+       {
+        "name" : "CybreSpace",
+        "uri_check" : "https://cybre.space/@{account}",
+        "e_code" : 200,
+        "e_string" : "cybre.space) - Cybrespace</title>",
+        "m_string" : "The page you were looking for doesn&#39;t",
+        "m_code" : 404,
+        "known" : ["TheGibson", "Wintermute"],
+        "valid" : true
+       },
+       {
+        "name" : "Mastodon.SDF",
+        "uri_check" : "https://mastodon.sdf.org/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.sdf.org)",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["SDF", "quoll"],
+        "valid" : true
+       },
+       {
+        "name" : "Toot.Community",
+        "uri_check" : "https://toot.community/@{account}",
+        "e_code" : 200,
+        "e_string" : "@toot.community) - toot.community</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["jorijn", "Johnny"],
+        "valid" : true
+       },
+       {
+        "name" : "masto.nu",
+        "uri_check" : "https://masto.nu/@{account}",
+        "e_code" : 200,
+        "e_string" : "@masto.nu) - masto.nu</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["mkevenaar", "monicawchin"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.au",
+        "uri_check" : "https://mastodon.au/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastodon.au) - Mastodon Australia</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["mb", "martin_english"],
+        "valid" : true
+       },
+       {
+        "name" : "mstdn.plus",
+        "uri_check" : "https://mstdn.plus/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mstdn.plus) - MSTDN+</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["JenTaylor", "MikeF"],
+        "valid" : true
+       },
+       {
+        "name" : "Vivaldi.net",
+        "uri_check" : "https://social.vivaldi.net/@{account}",
+        "e_code" : 200,
+        "e_string" : "@vivaldi.net) - Vivaldi Social</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["TobyMayra", "harupom"],
+        "valid" : true
+       },
+       {
+        "name" : "universeodon",
+        "uri_check" : "https://universeodon.com/@{account}",
+        "e_code" : 200,
+        "e_string" : "@universeodon.com) - Universeodon</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["supernovae", "Bronson"],
+        "valid" : true
+       },
+       {
+        "name" : "techhub.social",
+        "uri_check" : "https://techhub.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@techhub.social) - TechHub</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["nicdex", "peteohanlon"],
+        "valid" : true
+       },
+       {
+        "name" : "climatejustice.rocks",
+        "uri_check" : "https://climatejustice.rocks/@{account}",
+        "e_code" : 200,
+        "e_string" : "@climatejustice.rocks) - Mastodon</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["paula", "ahmed76farag"],
+        "valid" : true
+       },
+       {
+        "name" : "masto.ai",
+        "uri_check" : "https://masto.ai/@{account}",
+        "e_code" : 200,
+        "e_string" : "@masto.ai) - Mastodon</title>",
+        "m_string" : "The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["rbreich", "stux"],
+        "valid" : true
+       },
+       {
+        "name" : "Pravda.me",
+        "uri_check" : "https://pravda.me/@{account}",
+        "e_code" : 200,
+        "e_string" : "Российская социальная сеть (by mastodon)</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here.",
+        "m_code" : 404,
+        "known" : ["tass", "rt_russian"],
+        "valid" : true
+       },
+       {
+        "name" : "muenchen.social",
+        "uri_check" : "https://muenchen.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "muenchen.social - Die erste Mastodon Instanz für München</title>",
+        "m_string" : "<title>Die Seite, nach der du gesucht hast, wurde nicht gefunden",
+        "m_code" : 404,
+        "known" : ["joerg_spengler", "zeitbot"],
+        "valid" : true
+       },
+       {
+        "name" : "C.IM",
+        "uri_check" : "https://c.im/@{account}",
+        "e_code" : 200,
+        "e_string" : "@c.im) - C.IM</title>",
+        "m_string" : "<title>The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["admin", "paidugroup"],
+        "valid" : true
+       },
+       {
+        "name" : "sunbeam.city",
+        "uri_check" : "https://sunbeam.city/@{account}",
+        "e_code" : 200,
+        "e_string" : "<title>Sunbeam City",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["News", "wakest"],
+        "valid" : true
+       },
+       {
+        "name" : "pixelfed.social",
+        "uri_check" : "https://pixelfed.social/{account}",
+        "e_code" : 200,
+        "e_string" : "@pixelfed.social) - Pixelfed</title>",
+        "m_string" : "<title>pixelfed</title>",
+        "m_code" : 404,
+        "known" : ["dansup", "kaioluis"],
+        "valid" : true
+       },
+       {
+        "name" : "mstdn.party",
+        "uri_check" : "https://mstdn.party/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mstdn.party) - Mastodon Party</title>",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["staff", "dancoghlan"],
+        "valid" : true
+       },
+       {
+        "name" : "girlcock.club",
+        "uri_check" : "https://girlcock.club/@{account}",
+        "e_code" : 200,
+        "e_string" : "@girlcock.club) - Girlcock.club</title>",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["Elizabeth", "luccaflower"],
+        "valid" : true
+       },
+       {
+        "name" : "burma.social",
+        "uri_check" : "https://burma.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "social) - Burma Social</title>",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["thumyae", "hikaru77"],
+        "valid" : true
+       },
+       {
+        "name" : "rubber.social",
+        "uri_check" : "https://rubber.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@rubber.social) - Shiny Mastodon</title>",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["johnnygear", "redheadgay93"],
+        "valid" : true
+       },
+       {
+        "name" : "ohai.social",
+        "uri_check" : "https://ohai.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@ohai.social) - ohai.social</title>",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["resuna", "sonjdol"],
+        "valid" : true
+       },
+       {
+        "name" : "sfba.social",
+        "uri_check" : "https://sfba.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@sfba.social) - SFBA.social</title>",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["seb", "LincolnMitchell"],
+        "valid" : true
+       },
+       {
+        "name" : "aus.social",
+        "uri_check" : "https://aus.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "social) - Aus.Social</title>",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["Spoon", "ianmilliss"],
+        "valid" : true
+       },
+       {
+        "name" : "mindly.social",
+        "uri_check" : "https://mindly.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mindly.social",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["bobonbooks", "HippieScubaSteve"],
+        "valid" : true
+       },
+       {
+        "name" : "kolektiva.social",
+        "uri_check" : "https://kolektiva.social/@{account}",
+        "e_code" : 200,
+        "e_string" : "@kolektiva.social) - kolektiva.social</title>",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["memetro", "BigTittyBimbo"],
+        "valid" : true
+       },
+       {
+        "name" : "hachyderm.io",
+        "uri_check" : "https://hachyderm.io/@{account}",
+        "e_code" : 200,
+        "e_string" : "@hachyderm.io) - Hachyderm.io</title>",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["slotrak", "voided"],
+        "valid" : true
+       },
+       {
+        "name" : "wxw.moe",
+        "uri_check" : "https://wxw.moe/@{account}",
+        "e_code" : 200,
+        "e_string" : "@wxw.moe)",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["wxw_moe_status", "KyubikoSama"],
+        "valid" : true
+       },
+       {
+        "name" : "nerdculture",
+        "uri_check" : "https://nerdculture.de/@{account}",
+        "e_code" : 200,
+        "e_string" : "@nerdculture.de) - ",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["subetha", "cyberman"],
+        "valid" : true
+       },
+       {
+        "name" : "tkz.one",
+        "uri_check" : "https://tkz.one/@{account}",
+        "e_code" : 200,
+        "e_string" : "@tkz.one) -",
+        "m_string" : "que estabas buscando no existe",
+        "m_code" : 404,
+        "known" : ["Queenero89", "euitter"],
+        "valid" : true
+       },
+       {
+        "name" : "mstdn.ca",
+        "uri_check" : "https://mstdn.ca/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mstdn.ca",
+        "m_string" : "The page you are looking for isn&#39;t here",
+        "m_code" : 404,
+        "known" : ["Pinchy63", "Rasta"],
+        "valid" : true
+       },
+       {
+        "name" : "mastodon.bida",
+        "uri_check" : "https://mastodon.bida.im/@{account}",
+        "e_code" : 200,
+        "e_string" : "ida.im</title>",
+        "m_string" : "The page you are looking for isn&#39;t",
+        "m_code" : 404,
+        "known" : ["zabow", "admin"],
+        "valid" : true
+       },
+       {
+        "name" : "mastouille",
+        "uri_check" : "https://mastouille.fr/@{account}",
+        "e_code" : 200,
+        "e_string" : "@mastouille.fr",
+        "m_string" : "La page que vous recherchez",
+        "m_code" : 404,
+        "known" : ["jemesouviens", "premartinpatrick"],
+        "valid" : true
+       }
+    ]
+  }

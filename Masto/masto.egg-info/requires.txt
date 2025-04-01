@@ -1,0 +1,5 @@
+aiohttp
+requests
+tqdm
+w3lib
+beautifulsoup4

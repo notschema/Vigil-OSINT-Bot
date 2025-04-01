@@ -1,0 +1,36 @@
+# Environment variables and sensitive information
+.env
+.env.*
+*.pem
+*.key
+*_token.txt
+*_key.txt
+*_secret.txt
+api_keys.json
+secrets/
+
+# Log files
+*.log
+vigil_bot.log
+logs/
+
+# Temporary files
+temp/
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Virtualization/Environment
+venv/
+env/
+.python-version
+.venv/
+
+# OS specific
+Thumbs.db
+desktop.ini

@@ -1,0 +1,168 @@
+FROM python:3.11-slim
+
+# Install required system packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    gcc \
+    build-essential \
+    procps \
+    curl \
+    libfreetype6-dev \
+    libffi-dev \
+    libjpeg-dev \
+    zlib1g-dev \
+    python3-dev \
+    libart-2.0-dev \
+    pkg-config \
+    python3-setuptools \
+    python3-pip \
+    python3-wheel \
+    && rm -rf /var/lib/apt/lists/*
+
+# Environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV API_PORT=8000
+
+# Working directory
+WORKDIR /app
+
+# Copy requirements and installation scripts
+COPY requirements.txt .
+COPY install_maigret_deps.sh .
+COPY pre_install.sh .
+RUN chmod +x install_maigret_deps.sh pre_install.sh
+
+# Run pre-installation steps
+RUN ./pre_install.sh
+
+# Use a 2-step approach for installing dependencies to avoid conflicts
+# First install core dependencies with pre-built wheels when possible
+RUN pip install --no-cache-dir --prefer-binary -r requirements.txt || echo "Some requirements may have failed, continuing with fallback approach"
+
+# Then run the custom script to handle maigret and its dependencies
+RUN ./install_maigret_deps.sh
+
+# Verify installation
+RUN pip list | grep -E "maigret|reportlab|yarl|aiohttp"
+
+# Install additional dependencies if not in requirements.txt
+RUN pip install --no-cache-dir \
+    fastapi \
+    uvicorn \
+    websockets \
+    psutil \
+    python-dotenv
+
+# Create directories
+RUN mkdir -p temp logs config
+
+# Copy the API code and bot
+COPY api /app/api
+COPY commands /app/commands
+COPY vigil.py /app/vigil.py
+COPY *.md /app/
+COPY .env.example /app/
+
+# Copy tool directories needed for the bot
+COPY CheckLeaked /app/CheckLeaked
+COPY Maigret /app/Maigret
+COPY Masto /app/Masto
+COPY WhatsMyName /app/WhatsMyName
+COPY xeuledoc /app/xeuledoc
+COPY holehe /app/holehe
+
+# Create directories for logs and data
+RUN mkdir -p /app/logs /app/temp /app/config
+
+# Create an enhanced startup script
+RUN echo '#!/bin/bash\n\
+cd /app\n\
+\n\
+# Create necessary directories with proper permissions\n\
+mkdir -p /app/logs /app/temp /app/config\n\
+chmod -R 777 /app/logs /app/temp /app/config\n\
+\n\
+# Check for .env file\n\
+if [ ! -f "/app/.env" ]; then\n\
+    echo "WARNING: .env file not found at /app/.env"\n\
+    echo "Please ensure the .env file is mounted correctly"\n\
+    \n\
+    # Create a default .env file for testing\n\
+    echo "# Default .env file created by container\n\
+DISCORD_TOKEN=missing_token_please_mount_env_file\n\
+GITHUB_TOKEN=\n\
+" > /app/.env\n\
+    echo "Created a placeholder .env file for testing"\n\
+fi\n\
+\n\
+# Display .env file (hide token)\n\
+echo "Checking .env file content:"\n\
+grep -v "TOKEN" /app/.env || echo "No env vars found without TOKEN in name"\n\
+\n\
+echo "Starting VigilBot API on port $API_PORT..."\n\
+# Start the API server in the background\n\
+uvicorn api.main:app --host 0.0.0.0 --port $API_PORT --log-level info &\n\
+API_PID=$!\n\
+\n\
+# Wait for API to start\n\
+echo "Waiting for API to initialize..."\n\
+sleep 5\n\
+\n\
+# Check if debug bot script exists (for backward compatibility)\n\
+if [ -f "/app/debug_bot.py" ]; then\n\
+    echo "Running debug bot script..."\n\
+    python /app/debug_bot.py\n\
+else\n\
+    echo "Debug bot script not found, skipping..."\n\
+fi\n\
+\n\
+# Now auto-start the bot using the API endpoint\n\
+echo "Auto-starting the bot via API..."\n\
+START_RESPONSE=$(curl -s -X POST http://localhost:$API_PORT/start)\n\
+echo "Bot start response: $START_RESPONSE"\n\
+\n\
+# Monitor the log files\n\
+echo "Checking for log files..."\n\
+sleep 3\n\
+\n\
+if [ -f "/app/logs/bot_stdout.log" ]; then\n\
+    echo "Bot STDOUT log:"\n\
+    cat /app/logs/bot_stdout.log\n\
+fi\n\
+\n\
+if [ -f "/app/logs/bot_stderr.log" ]; then\n\
+    echo "Bot STDERR log:"\n\
+    cat /app/logs/bot_stderr.log\n\
+fi\n\
+\n\
+if [ -f "/app/logs/vigil_bot.log" ]; then\n\
+    echo "Bot log file:"\n\
+    cat /app/logs/vigil_bot.log\n\
+else\n\
+    echo "WARNING: No vigil_bot.log file found"\n\
+fi\n\
+\n\
+# List running processes\n\
+echo "Checking running processes:"\n\
+ps aux | grep python\n\
+\n\
+# Keep the script running\n\
+echo "API is running, checking status every minute..."\n\
+while kill -0 $API_PID 2>/dev/null; do\n\
+    sleep 60\n\
+    echo "API is still running. Current processes:"\n\
+    ps aux | grep python | grep -v grep\n\
+done\n\
+' > /app/start-api.sh
+
+# Set execute permissions
+RUN chmod +x /app/vigil.py
+RUN chmod +x /app/api/main.py
+RUN chmod +x /app/start-api.sh
+
+# Expose API port
+EXPOSE 8000
+
+# Start the API and bot
+CMD ["/app/start-api.sh"]

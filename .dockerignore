@@ -1,0 +1,54 @@
+# Git and version control
+.git
+.github
+.gitignore
+
+# Environment variables
+.env
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+temp/
+tmp/
+
+# Windows batch files
+*.bat
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Docker files
+Dockerfile
+docker-compose.yml
+docker-compose.unraid.yml
+
+# Documentation
+LICENSE
+docs/
+
+# Editor files
+.idea/
+.vscode/
+
+# Development/testing specific files
+tests/
+test_data/
+
+# Node.js
+node_modules/
+.next/
+.npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

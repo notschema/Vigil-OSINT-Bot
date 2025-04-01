@@ -1,0 +1,32 @@
+discord.py>=2.0.0
+requests>=2.25.0
+w3lib>=1.22.0
+beautifulsoup4>=4.9.3
+tqdm>=4.61.0
+phonenumbers>=8.12.0
+pycountry>=20.7.3
+certifi>=2019.6.16
+colorama>=0.4.1
+PySocks>=1.7.0
+requests-futures>=1.0.0
+stem>=1.8.0 
+torrequest>=0.1.0
+pandas>=1.0.0
+openpyxl<=3.0.10
+exrex>=0.11.0
+xeuledoc==2.1
+socialscan>=1.1.3
+httpx>=0.14.0
+geopy>=2.1.0
+# Use a pre-built wheel for aiohttp instead of building from source
+aiohttp==3.8.5
+fpdf>=1.7.0
+python-dotenv>=0.19.0
+dnspython>=2.1.0
+aiohttp-socks>=0.7.0
+reportlab==3.6.12
+# Use pre-built wheels where possible to avoid compilation issues
+# yarl 1.9.4 provides pre-built wheels for Python 3.11
+yarl==1.9.4
+# Added reportlab explicitly, and removed maigret from here
+# Will install maigret separately after core dependencies

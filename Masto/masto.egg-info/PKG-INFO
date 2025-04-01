@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: masto
+Version: 0.1.0
+Requires-Dist: aiohttp
+Requires-Dist: requests
+Requires-Dist: tqdm
+Requires-Dist: w3lib
+Requires-Dist: beautifulsoup4
+Dynamic: requires-dist
